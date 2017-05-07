@@ -9,7 +9,7 @@ def nSplit(n):
     biIndex = 0
 
     for letter in s:
-        if letter != '\n':
+        if letter != '\n' and letter != '\r':
             if letter == '`':
                 if len(tempString) > 0:
                     if tempString[len(tempString) - 1] == '`':
@@ -58,7 +58,7 @@ def addToDict(splitWords):
     #print dict
     return dict
 
-def join(dict):
+def njoin(dict):
     starterWords = []
     currentWord = ''
     combinedString = ''
@@ -81,6 +81,9 @@ def join(dict):
 
 def run(n = 3):
     x = nSplit(n)
-    return join(addToDict(x))
+    return njoin(addToDict(x))
+
+
 
 print(run(4))
+#print(str(addToDict(nSplit(4))))
